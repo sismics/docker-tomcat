@@ -1,0 +1,13 @@
+version: '3'
+services:
+  tomcat:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    environment:
+      - TOMCAT_ADMIN_USER=admin
+      - TOMCAT_ADMIN_PASSWORD=tomcat
+    image: sismics/tomcat:7.79.1-jdk7
+    restart: always
+    container_name: tomcat
+    network_mode: bridge
